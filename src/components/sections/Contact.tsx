@@ -124,6 +124,18 @@ export const Contact: React.FC = () => {
         </motion.a>
 
       </motion.div>
+
+      {/* NEW LOCATION FOOTER */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+        className="text-center mt-20 pt-8 border-t border-[#2D2D2D]/10"
+      >
+        <p className="text-[#2D2D2D]/60 font-serif italic text-lg tracking-wide">
+          Currently based in Memphis, TN — but often in Seattle, WA.
+        </p>
+      </motion.div>
     </div>
   );
 };

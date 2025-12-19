@@ -15,9 +15,8 @@ export const Home: React.FC = () => {
 
       <div className="text-center mb-16 max-w-lg mx-auto">
         <p className="text-xl text-[#2D2D2D] font-light leading-relaxed">
-          I'm a <span className="border-b border-[#E15549]/30 pb-0.5">software engineer</span>, 
-          working at the intersection of mathematics, design & functionality. 
-          Currently building <em>SafeLink HoverGuard</em>.
+          I'm a <span className="border-b border-[#E15549]/30 pb-0.5">student</span> and <span className="border-b border-[#E15549]/30 pb-0.5">software engineer</span>, 
+          currently focusing and building full-stack apps, dev tools, infra and ML tools.<em></em>.
         </p>
       </div>
 
@@ -33,8 +32,13 @@ export const Home: React.FC = () => {
               <h3 className="text-xl font-medium text-[#2D2D2D] mb-1 group-hover:text-[#E15549] transition-colors duration-300">
                 Software Engineering Intern
               </h3>
+              <span className="text-[10px] uppercase tracking-wider border border-[#2D2D2D]/20 px-1.5 py-0.5 rounded text-[#2D2D2D]/60 font-sans">
+                Remote
+              </span>
               <p className="text-gray-600 leading-relaxed font-light">
-                Collaborating with faculty-led startup to develop innovative software solutions and architectural designs.
+                Collaborating remotely with a faculty-led venture to architect and build 
+                software solutions from the ground up. Focusing on ML research, full-stack development, and 
+                infrastructure for early-stage product validation.
               </p>
             </div>
             <div className="text-right text-sm text-gray-400 font-medium italic ml-4">Present</div>
@@ -46,8 +50,8 @@ export const Home: React.FC = () => {
                 Computer Science & Math Major
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Junior pursuing a double major in Computer Science and Mathematics with a focus on software engineering and data science at Rust College. 
-                Experience in full-stack development, data science, and mathematical research.
+                Senior pursuing a double major in Computer Science and Mathematics with a focus on software engineering and data science at Rust College. 
+                I have a 2-year experience in software engineering, data science, and mathematical methods.
               </p>
             </div>
             <div className="text-right text-sm text-gray-400 font-medium italic ml-4">2023 — Present</div>
@@ -64,7 +68,7 @@ export const Home: React.FC = () => {
               LinkedIn
               <span className="absolute bottom-0 left-0 w-0 h-px bg-[#E15549] transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="https://github.com/JosephMusenge" className="text-gray-500 hover:text-[#E15549] transition-colors relative group font-medium">
+            <a href="https://github.com/jpmusenge" className="text-gray-500 hover:text-[#E15549] transition-colors relative group font-medium">
               GitHub
               <span className="absolute bottom-0 left-0 w-0 h-px bg-[#E15549] transition-all duration-300 group-hover:w-full"></span>
             </a>
