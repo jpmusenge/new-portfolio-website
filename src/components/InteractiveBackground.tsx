@@ -32,7 +32,7 @@ const InteractiveBackground: React.FC = () => {
 
     const initParticles = () => {
       const particles: Particle[] = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+      const particleCount = Math.floor((canvas.width * canvas.height) / 13000);
 
       for (let i = 0; i < particleCount; i++) {
         const x = Math.random() * canvas.width;
@@ -44,8 +44,8 @@ const InteractiveBackground: React.FC = () => {
           vy: 0,
           originalX: x,
           originalY: y,
-          size: Math.random() * 3 + 1,
-          opacity: Math.random() * 0.3 + 0.1,
+          size: Math.random() * 2.5 + 1,
+          opacity: Math.random() * 0.4 + 0.15,
         });
       }
       particlesRef.current = particles;
@@ -66,24 +66,28 @@ const InteractiveBackground: React.FC = () => {
         const dx = mouse.x - particle.x;
         const dy = mouse.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const maxDistance = 150;
+        const maxDistance = 250;
 
         if (distance < maxDistance) {
           // Repel particle from mouse
           const force = (maxDistance - distance) / maxDistance;
           const angle = Math.atan2(dy, dx);
-          particle.vx -= Math.cos(angle) * force * 2;
-          particle.vy -= Math.sin(angle) * force * 2;
+
+          const pushStrength = 8;
+          particle.vx -= Math.cos(angle) * force * pushStrength;
+          particle.vy -= Math.sin(angle) * force * pushStrength;
         }
 
+        // ctx.fillStyle = `rgba(45, 45, 45, ${particle.opacity * 0.5})`; // Dark color, lower opacity
+
         // Return to original position
-        const returnForce = 0.02;
+        const returnForce = 0.08;
         particle.vx += (particle.originalX - particle.x) * returnForce;
         particle.vy += (particle.originalY - particle.y) * returnForce;
 
         // Apply friction
-        particle.vx *= 0.95;
-        particle.vy *= 0.95;
+        particle.vx *= 0.90;
+        particle.vy *= 0.90;
 
         // Update position
         particle.x += particle.vx;
@@ -92,7 +96,7 @@ const InteractiveBackground: React.FC = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(156, 163, 175, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(45, 45, 45, ${particle.opacity * 0.4})`;
         ctx.fill();
 
         // Draw connections to nearby particles
@@ -103,13 +107,16 @@ const InteractiveBackground: React.FC = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
+            // Change the connection line style
           if (distance < 100) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            const opacity = (100 - distance) / 100 * 0.1;
-            ctx.strokeStyle = `rgba(156, 163, 175, ${opacity})`;
-            ctx.lineWidth = 0.5;
+            
+            // Logic: The closer they are, the darker the pencil line
+            const opacity = (120 - distance) / 120 * 0.18; 
+            ctx.strokeStyle = `rgba(45, 45, 45, ${opacity})`; // Charcoal color
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         });

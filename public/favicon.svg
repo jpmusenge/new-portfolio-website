@@ -1,0 +1,15 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="32" fill="#2D2D2D"/>
+  
+  <text x="50%" y="68%" 
+        font-family="'Newsreader', 'Times New Roman', serif" 
+        font-style="italic" 
+        font-weight="300" 
+        font-size="96" 
+        fill="#FFF9F5" 
+        text-anchor="middle">
+    J
+  </text>
+  
+  <circle cx="94" cy="94" r="12" fill="#E15549" stroke="#2D2D2D" stroke-width="4"/>
+</svg>
