@@ -44,7 +44,7 @@ export const Projects: React.FC = () => {
         <p className="text-xl text-[#2D2D2D] font-light italic max-w-lg mx-auto leading-relaxed">
           A selection of my personal experiments and code. 
           <br />
-          Explorations in <span className="border-b border-[#E15549]/30 pb-0.5">data science</span> & <span className="border-b border-[#E15549]/30 pb-0.5">web engineering</span>.
+          Explorations in <span className="border-b border-[#E15549]/30 pb-0.5">full-stack engineering</span> & <span className="border-b border-[#E15549]/30 pb-0.5">ML applications</span>.
         </p>
       </div>
 
