@@ -96,7 +96,7 @@ const InteractiveBackground: React.FC = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(45, 45, 45, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(45, 45, 45, ${particle.opacity * 0.4})`;
         ctx.fill();
 
         // Draw connections to nearby particles
@@ -114,7 +114,7 @@ const InteractiveBackground: React.FC = () => {
             ctx.lineTo(otherParticle.x, otherParticle.y);
             
             // Logic: The closer they are, the darker the pencil line
-            const opacity = (120 - distance) / 120 * 0.25; 
+            const opacity = (120 - distance) / 120 * 0.18; 
             ctx.strokeStyle = `rgba(45, 45, 45, ${opacity})`; // Charcoal color
             ctx.lineWidth = 0.6;
             ctx.stroke();
