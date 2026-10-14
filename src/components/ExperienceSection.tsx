@@ -11,17 +11,15 @@ export const ExperienceSection: React.FC = () => (
       {experience.map((entry) => (
         <div
           key={`${entry.label}-${entry.date}`}
-          className="border-b border-ink/10 py-5 first:pt-0 last:border-none"
+          className="flex items-baseline justify-between gap-4 border-b border-ink/10 py-4 first:pt-0 last:border-none"
         >
-          <div className="flex items-baseline justify-between gap-4">
-            <h3 className="font-sans text-[15px] font-medium text-ink">{entry.label}</h3>
-            <span className="shrink-0 font-sans text-xs tabular-nums text-muted">
-              {entry.date}
-            </span>
-          </div>
-          <p className="mt-1.5 max-w-[50ch] font-sans text-sm leading-relaxed text-muted">
-            {entry.detail}
+          <p className="font-sans text-[15px] leading-relaxed">
+            <span className="font-medium text-ink">{entry.label}</span>{' '}
+            <span className="text-muted">{entry.detail}</span>
           </p>
+          <span className="shrink-0 font-sans text-xs tabular-nums text-muted">
+            {entry.date}
+          </span>
         </div>
       ))}
     </div>
