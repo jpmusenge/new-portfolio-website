@@ -4,7 +4,7 @@ export interface TimelineEntry {
   date: string;
 }
 
-export type ProjectCategory = 'ml' | 'web';
+export type ProjectCategory = 'ml' | 'web' | 'ios';
 
 export interface Project {
   title: string;

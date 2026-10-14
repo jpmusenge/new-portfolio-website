@@ -1,5 +1,10 @@
 import React from 'react';
 import { Project } from '../types';
+import { PROJECT_FILTERS } from '../lib/projectFilters';
+
+const CATEGORY_LABEL = Object.fromEntries(
+  PROJECT_FILTERS.filter((f) => f.id !== 'all').map((f) => [f.id, f.label]),
+);
 
 interface ProjectRowProps {
   project: Project;
@@ -25,7 +30,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({ project, onPointerMove, 
         </a>
       </h3>
       <span className="shrink-0 font-sans text-[11px] uppercase tracking-wider text-muted">
-        {project.category === 'ml' ? 'ML' : 'Web'}
+        {CATEGORY_LABEL[project.category]}
         {project.status === 'in-progress' && ' · In Progress'}
       </span>
     </div>
