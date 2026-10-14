@@ -1,19 +1,18 @@
-// src/types/index.ts
-export type Section = 'home' | 'experiences' | 'projects' | 'contact';
-
-export interface Experience {
-  title: string;
-  company: string;
-  location: string;
-  period: string;
-  description: string;
-  current: boolean;
+export interface TimelineEntry {
+  label: string;
+  detail: string;
+  date: string;
 }
+
+export type ProjectCategory = 'ml' | 'web';
 
 export interface Project {
   title: string;
   description: string;
   tech: string[];
-  link: string;
-  featured: boolean;
+  category: ProjectCategory;
+  repoUrl: string;
+  demoUrl?: string;
+  image?: string;
+  status?: 'in-progress';
 }
