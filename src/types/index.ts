@@ -6,6 +6,11 @@ export interface TimelineEntry {
 
 export type ProjectCategory = 'ml' | 'web' | 'ios';
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -13,6 +18,6 @@ export interface Project {
   category: ProjectCategory;
   repoUrl: string;
   demoUrl?: string;
-  image?: string;
+  image?: ProjectImage;
   status?: 'in-progress';
 }
