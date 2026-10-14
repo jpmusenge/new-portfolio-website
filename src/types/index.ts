@@ -2,6 +2,7 @@ export interface TimelineEntry {
   label: string;
   detail: string;
   date: string;
+  url?: string;
 }
 
 export type ProjectCategory = 'ml' | 'web' | 'ios';
