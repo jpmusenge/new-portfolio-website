@@ -11,9 +11,9 @@ export const ExperienceSection: React.FC = () => (
       {experience.map((entry) => (
         <div
           key={`${entry.label}-${entry.date}`}
-          className="flex items-baseline justify-between gap-4 border-b border-ink/10 py-4 first:pt-0 last:border-none"
+          className="flex items-start justify-between gap-4 border-b border-ink/10 py-4 first:pt-0 last:border-none"
         >
-          <p className="font-sans text-[15px] leading-relaxed">
+          <p className="min-w-0 flex-1 font-sans text-[15px] leading-relaxed">
             {entry.url ? (
               <a
                 href={entry.url}
